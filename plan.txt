@@ -1,0 +1,33 @@
+StoriesBack
+
+Stack - MERN  
+Chat - Firebase
+
+React (also admin)
+
+---> User Signup, Signin, Signout
+---> Add post, edit post, delete post
+---> Like post, dislike post
+---> Comment post, like comment, dislike comment
+---> User's profile
+---> Post's page
+---> Chat with friend
+---> Group chats
+
+(Admin)
+---> Delete users
+---> Delete post
+---> Total posts by date
+
+
+
+React Native
+
+---> User Signup, Signin, Signout
+---> Add post, edit post, delete post
+---> Like post, dislike post
+---> Comment post, like comment, dislike comment
+---> User's profile
+---> Post's page
+---> Chat with friend
+---> Group chats
