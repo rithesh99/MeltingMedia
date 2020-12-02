@@ -1,0 +1,73 @@
+.addpost{
+    padding: 10px;
+    height: 200vh;
+}
+.addpost__image {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+}
+.addpost__src {
+  display: flex;
+  flex-direction: column;
+}
+.addpost__pic {
+  /* flex: 1; */
+}
+.addpost__crop {
+  /* flex: 1; */
+  padding: 10px;
+  text-align: center;
+}
+.addpost__crop__button {
+  padding: 10px 20px 10px 20px;
+  font-weight: 800;
+  background-color: #3c40c6;
+  border: #3c40c6;
+  color: white;
+}
+.addpost__result {
+    text-align: center;
+    padding: 20px;
+}
+.addpost__photo {
+  height: auto;
+  width: 100%;
+}
+.addpost__title__section{
+    padding: 20px;
+}
+.addpost__tag__section{
+    padding: 20px;
+}
+.addpost__tag{
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #004fed;
+    color: white;
+}
+.addpost__tag__input__section{
+    padding: 20px;
+}
+.addpost__tag__input{
+
+}
+.addpost__tag__btn{
+    font-size: 13px;
+    padding: 5px;
+    background-color: #01CBC6;
+    border: #01CBC6;   
+}
+.addpost__submit{
+    text-align: center;
+    padding: 20px;
+}
+.addpost__submit__btn{
+    padding: 20px 40px;
+    font-size: 20px;
+    font-weight: 800;
+    background-color: #45CE30;
+    border: #45CE30;
+}

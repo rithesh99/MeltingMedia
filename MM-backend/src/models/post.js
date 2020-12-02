@@ -32,9 +32,12 @@ var postSchema = new Schema(
         default: []
     },
     postedBy: {
-        type: ObjectId,
-        ref: "User",
+        type: String,
         required: true
+    },
+    postedByUrl: {
+      type: String,
+      required: true
     }
   },
   { timestamps: true }

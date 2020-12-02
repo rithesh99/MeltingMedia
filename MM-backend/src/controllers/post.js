@@ -13,7 +13,7 @@ exports.getPostById = (req, res, next, id) => {
 };
 
 exports.createPost = (req, res) => {
-  const { title, imageUrl, tags, likes, comments, postedBy } = req.body;
+  const { title, imageUrl, tags, postedBy } = req.body;
 
   const post = new Post(req.body);
   post.save((err, post) => {
@@ -68,15 +68,31 @@ exports.updatePost = (req, res) => {
     }
   );
 };
+exports.updateLike = (req, res) => {
+  Post.findByIdAndUpdate(
+    { _id: req.post._id },
+    { $inc: {likes: req.body.counter} },
+    { new: true, useFindAndModify: false },
+    (err, post) => {
+      if (err) {
+        return res.status(400).json({
+          error: "YOU ARE NOT AUTHORIZED TO UPDATE THIS USER",
+        });
+      }
+
+      res.json(post);
+    }
+  );
+};
 
 //PRODUCT LISTING
 exports.getAllPosts = (req, res) => {
-  let limit = req.query.limit ? parseInt(req.query.limit) : 8;
-  let sortBy = req.query.limit ? req.query.limit : "_id";
+  // let limit = req.query.limit ? parseInt(req.query.limit) : 8;
+  // let sortBy = req.query.limit ? req.query.limit : "_id";
 
   Post.find()
-    .sort([[sortBy, "asc"]])
-    .limit(limit)
+    // .sort([[sortBy, "asc"]])
+    // .limit(limit)
     .exec((err, posts) => {
       if (err) {
         return res.status(400).json({

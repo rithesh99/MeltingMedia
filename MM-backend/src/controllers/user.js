@@ -36,7 +36,7 @@ exports.getAllUsers = (req, res) => {
 exports.updateUser = (req, res) => {
     User.findByIdAndUpdate(
         {_id : req.profile._id},
-        {$set : req.body},
+        {$push : req.body},
         {new : true, useFindAndModify : false},
         (err, user)  => {
             if(err){
@@ -44,7 +44,6 @@ exports.updateUser = (req, res) => {
                     error: "YOU ARE NOT AUTHORIZED TO UPDATE THIS USER"
                 })
             }
-            user.salt = undefined;
             user.password = undefined;
             user.createdAt = undefined;
             user.updatedAt = undefined;

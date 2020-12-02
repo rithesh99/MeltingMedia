@@ -9,6 +9,11 @@ var userSchema = new Schema(
       required: true,
       maxlength: 32,
       trim: true,
+      unique: true,
+    },
+    photo:{
+      type: String,
+      default:"https://img.favpng.com/25/1/17/avatar-user-computer-icons-software-developer-png-favpng-7SbFpNeqKqhhTrrrnHFUqk6U4.jpg"
     },
     username: {
       type: String,
@@ -28,7 +33,7 @@ var userSchema = new Schema(
     dob: {
         type: Date,
     },
-    phone:{
+    number:{
         type: Number,
     },
     role: {

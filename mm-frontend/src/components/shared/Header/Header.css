@@ -1,0 +1,38 @@
+.header{
+    display: flex;
+    background-color: #0A79DF;
+    height: 50px;
+    /* position: sticky; */
+}
+.header__logo{
+    flex: 0.5;
+    display: flex
+}
+.header__logo__pic{
+    height: 60px;
+    width: auto;
+    margin: -5px 0 20px 20px;
+}
+.header__title{
+    margin: 10px 0 0 20px;
+    color: #EAF0F1;
+}
+.header__center{
+    flex: 0
+}
+.header__navs{
+    position: absolute;
+    right: 20px;
+    display: flex;
+    flex: 0.5;
+}
+.header__link{
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+.header__link:hover{
+    /* text-decoration: underline; */
+    font-size: 18px;
+    /* color: #FAD02E; */
+}

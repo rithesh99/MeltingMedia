@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 
-const {getPostById, createPost, getPost, deletePost, updatePost, getAllPosts} = require("../controllers/post");
+const {getPostById, createPost, getPost, deletePost, updatePost, getAllPosts, updateLike} = require("../controllers/post");
 const {isAdmin} = require("../controllers/auth");
 const {getUserById} = require("../controllers/user");
 

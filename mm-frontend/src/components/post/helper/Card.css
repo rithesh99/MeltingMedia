@@ -1,0 +1,141 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #99aaab;
+    padding: 10px;
+    margin-top: 30px;
+    border-radius: 10px;
+    position: relative;
+    background-color: #fff;
+}
+.card {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+.card__user__pic__name{
+    display: flex;
+}
+.card__user__info{
+    display: flex;
+    margin: 0 0 10px 0;
+}
+.card__user__pic{
+    width: 40px;
+    border-radius: 50%;
+}
+.card__user__info__name{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+  
+.card__image > img{
+    height: 400px;
+    width: 100%;
+    object-fit: contain;
+}
+.card__user__info__name > h3{
+    color:#4834DF
+}
+.card__title{
+    margin: 10px 0 0px 0;
+}
+.card__tags{
+    display: flex;
+    font-size: 14px;
+    color: blue;
+}
+.card__tags > p{
+    padding: 5px;
+}
+.card__info{
+    display: flex;
+}
+
+.card__info__up{
+    color: #0A79DF;
+    margin: 10px 15px 10px 10px;
+
+}
+
+.card__info__likes{
+    display: flex;
+    font-size: 12px;
+}
+.card__info__comment{
+    color: #FF3E4D;
+    margin: 10px 15px 10px 10px;
+
+}
+.card__comment{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 20px 0px 20px;
+    padding: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 15px;
+    background-color: #EAF0F1;
+}
+.card__comment__user{
+    display: flex;
+}
+.card__comment__user > h4 {
+    margin-left: 5px;
+    margin-top: 8px;
+} 
+.card__comment__pic{
+    width: 30px;
+    border-radius: 50%;
+}
+
+.card__addComment__section{
+    display: flex;
+}
+.card__addComment__input{
+    flex:0.9;
+}
+.card__addComment__btn{
+    float: 0.1;
+    margin-top: 10px;
+    padding: 5px;
+    margin-left: 5px;
+    background-color: #0A79DF;
+    font-size: 10px;
+}
+.card__addComment{
+    margin: 10px;
+    color: blue;
+    font-size: 12px;
+    text-align: right;
+}
+.card__showComment__false{
+    margin: 10px;
+    color: blue;
+    font-size: 12px;
+    text-align: left;
+}
+.card__showComment__true{
+    margin: 10px;
+    color: blue;
+    font-size: 12px;
+    text-align: left;
+}
+.card__like__btn{
+    color: #0A79DF;
+    padding: 8px;
+}
+.card__comment__btn{
+    color: #E83350;
+    padding: 8px;
+
+}
+.card__like__btn:hover{
+    font-size: 30px;
+    padding: 5px;
+}
+.card__comment__btn:hover{
+    font-size: 30px;
+    padding: 5px;
+
+}
