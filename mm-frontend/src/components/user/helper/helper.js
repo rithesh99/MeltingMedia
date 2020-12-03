@@ -13,3 +13,19 @@ export const getUser = (userId) => {
     })
     .catch(err => console.log(err));
 };
+
+
+export const deletePost = (token,postId) => {
+    return fetch(`${API}/post/${postId}`,{
+        method: "DELETE",
+        headers:{
+            Accept: "application/json",
+            Authorization: `Bearer ${token}`
+        },
+    })
+    .then(response => {
+        return response.json();
+    })
+    .catch(err => console.log(err));
+};
+

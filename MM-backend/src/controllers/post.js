@@ -8,6 +8,7 @@ exports.getPostById = (req, res, next, id) => {
       });
     }
     req.post = post;
+    // console.log("Post by id",post);
     next();
   });
 };
@@ -36,9 +37,10 @@ exports.getPost = (req, res) => {
 };
 
 //DELETE CONTROLLERS
-exports.deletePost = (req, res) => {
+exports.deletePost = (req, res) => { 
   let post = req.post;
-  post.remove((err, deletedPost) => {
+  // console.log("Post...",post);
+  post.remove((err, post) => {
     if (err) {
       return res.status(400).json({
         error: "FAILED TO DELTE THE PRODUCT",
@@ -46,7 +48,7 @@ exports.deletePost = (req, res) => {
     }
     res.json({
       message: "DELETION WAS SUCCESS",
-      deletedPost,
+      post,
     });
   });
 };

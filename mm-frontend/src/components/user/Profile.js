@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { isAuthenticated } from "../auth/helper/helper";
 import Base from "../main/Base";
-import { getUser } from "./helper/helper";
+import { deletePost, getUser } from "./helper/helper";
 import "./helper/Profile.css";
+import DeleteIcon from '@material-ui/icons/Delete';
 
 function Profile() {
+  const {token,user}  = isAuthenticated()
   const [data, setData] = useState({});
-  const { token, user } = isAuthenticated();
 
   useEffect(() => {
     getUser(user._id)
@@ -16,6 +17,17 @@ function Profile() {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  const deleteP = (id) => {
+    // console.log("Post ID fe",id);
+    if (window.confirm("Do you want delete this post") === true) {
+      deletePost(token,id)
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+    } 
+  }
+    
+  
 
   return (
     <Base>
@@ -35,12 +47,14 @@ function Profile() {
           <h1>Posts</h1>
           <div className="profile__posts__images">
             {data.post?.map((p, i) => (
+              <div key={i}>
               <img
-                key={i}
                 src={p.imageUrl}
                 alt=""
                 className="profile__posts__image"
               />
+              <DeleteIcon onClick={() => deleteP(p._id)} />
+              </div>
             ))}
           </div>
         </div>
