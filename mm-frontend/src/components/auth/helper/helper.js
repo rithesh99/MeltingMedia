@@ -1,5 +1,5 @@
 // import {API} from "../../backend";
-const API="http://localhost:8000/api"
+const API="https://serene-springs-18826.herokuapp.com/api"
 
 
 export const signup = user => {

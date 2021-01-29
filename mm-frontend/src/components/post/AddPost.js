@@ -93,9 +93,13 @@ const AddArticle = () => {
     console.log("values", values);
     createPost(token, user._id, values).then((data) => {
       console.log("data", data);
-      if (data.err) {
+      if(data === undefined){
+        setValues({...values, error: "Image size is large!!!! "})
+      } 
+      else if (data.err) {
         setValues({ ...values, error: data.err });
-      } else {
+      }
+       else {
         updateUserPost(token, user._id, {post: data})
         .then()
         .catch()
@@ -170,8 +174,8 @@ const AddArticle = () => {
             <textarea
               onChange={handleChange("title")}
               className=""
-              cols="50"
-              rows="5"
+              cols="80"
+              rows="8"
             />
           </div>
 

@@ -53,13 +53,13 @@
     margin-left: 15px;
 }
 .profile__posts__image{
-    width: 150px;
-    height: 120px;
+    width: 130px;
+    height: 100px;
     margin: 5px;
     border-radius: 10px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 .profile__posts__image:hover{
-    width: 165px;
-    height: 135px;
+    width: 138px;
+    height: 105px;
 }

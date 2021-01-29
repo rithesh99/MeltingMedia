@@ -29,7 +29,7 @@ export const getPost = (postId) => {
     })
     .catch(err => console.log(err));
 };
-export const getPosts = (token) => {
+export const getPosts = () => {
     return fetch(`${API}/posts`,{
         method: "GET",
         headers:{

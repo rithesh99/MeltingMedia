@@ -28,6 +28,7 @@ const Signin = () => {
     setValues({ ...values, error: false, loading: true });
     signin({ email, password })
       .then(data => {
+        console.log(data);
         if (data.error) {
           setValues({ ...values, error: data.error, loading: false });
           console.log("signin failed")
@@ -37,7 +38,8 @@ const Signin = () => {
               ...values,
               didRedirect: true
             });
-            console.log("signin successful")
+            console.log("signin successful",data)
+            // console.log(data)
           });
         }
       })

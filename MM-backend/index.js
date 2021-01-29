@@ -13,14 +13,14 @@ const authRoutes = require("./src/routes/auth");
 const userRoutes = require("./src/routes/user");
 const postRoutes = require("./src/routes/post");
 
-
 //DB CONNECTION
-mongoose.connect(process.env.DATABASE, {
+mongoose.connect("mongodb+srv://rithesh:rithesh07@meltingmedia.n5jp9.mongodb.net/MeltingMedia?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true     
     }
-).then(() => {
+)
+.then(() => {
     console.log("DB CONNECTED")
 }).catch(() => {
     console.log("DB GOT OOPS")

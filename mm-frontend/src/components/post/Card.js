@@ -28,6 +28,7 @@ function Card({
     message: "",
   });
   const [card, setCard] = useState(false);
+  const [likedUser, setLikedUser] = useState(false);
 
   const handleChangeAct = (name) => (event) => {
     const value = name === "photo" ? event.target.files[0] : event.target.value;
@@ -40,7 +41,10 @@ function Card({
     setContents({ ...contents, message: "" });
     setCard(false);
     updatePost(token, id, { comments: comments })
-      .then((res) => console.log(res))
+      .then((res) => {
+        setCommentSection(true)
+        console.log(res)
+      })
       .catch((err) => console.log(err));
   };
 
@@ -55,6 +59,14 @@ function Card({
       console.log("User liked");
       likedUsers.push(user._id)
       setCount(count + 1)
+      likedUsers.forEach((usr) => {
+        if (usr === user._id) {
+          console.log(usr);
+          console.log(likedUser);
+          setLikedUser(true)
+          console.log(likedUser);
+        }
+      });
       updatePost(token, id, { likedUsers: likedUsers }) 
         .then((res) =>
           // setUsersLiked(""),
@@ -62,13 +74,21 @@ function Card({
         )
         .catch((err) => console.log(err));
     } else {
-      likedUsers.forEach((usr) => {
-        console.log("usr", usr);
-        if (usr == user._id) {
+        likedUsers.forEach((usr) => {
+          if (usr === user._id) {
+            console.log(usr);
+            console.log(likedUser);
+            setLikedUser(true)
+            console.log(likedUser);
+          }
+        });
+        // console.log("usr", usr);
+        if (likedUser) {
           alert("User already liked");
         } else {
           setCount(count + 1)
           console.log("User liked");
+          setLikedUser(true)
           // setUsersLiked(...likedUsers, user._id);
           likedUsers.push(user._id)
           updatePost(token, id, { likedUsers: likedUsers })
@@ -78,9 +98,17 @@ function Card({
             )
             .catch((err) => console.log(err));
         }
-      });
+     
     }
   };
+
+  useEffect(() => {
+    likedUsers.forEach((usr) => {
+      if (usr === user._id) {
+        setLikedUser(true)
+      }
+    });
+  }, [likedUser])
 
   const CardSection = () => {
     return (
